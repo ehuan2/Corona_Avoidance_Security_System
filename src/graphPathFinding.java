@@ -19,7 +19,10 @@ public class graphPathFinding {
       int xNext = qX.poll();
       int yNext = qY.poll();
       
-      
+      if(xNext == xDest && yNext == yDest){
+         
+        
+      }
       
       
       
