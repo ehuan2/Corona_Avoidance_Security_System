@@ -64,7 +64,7 @@ public class graphPathFinding {
       
       if(xNext == xDest && yNext == yDest){
          pointEnd = new Point(xNext, yNext);
-         return buildPath(pointEnd);
+         return buildPath(pointEnd).toArray();
       }
       
      
