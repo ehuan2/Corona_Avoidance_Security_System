@@ -67,8 +67,35 @@ public class graphPathFinding {
          return buildPath(pointEnd);
       }
       
+     
+     int[] xVector = new int[]{25,-25,0,0};
+     int[] yVector = new int[]{0,0,25,-25};
+     
+     for(int i = 0; i < 4; i++){
+      int xNew = xNext + xVector[i];
+      int yNew = yNext + yVector[i];
       
+       if(flagMap.get(xNew + "|" + yNew) == null){
+         if(xNew >= 0 && xNew <= 750 && yNew >= 0 && yNew <= 750){
+          
+           if(!inContaminationAreas(xNew, yNew, xValues, yValues, radius){
+             
+             pointLocation next = new pointLocation(xNew, yNew);
+             next.parent = new pointLocation(xNext, yNext);
+             qX.add(xNew);
+             qY.add(yNew);
+            
+            
+             flagMap.put(xNew + "|" + yNew, true);
+            
+            
+           }
+          
+         }
       
+       }
+     }
+     
     }
    
    return null;
@@ -97,6 +124,11 @@ public class graphPathFinding {
   
  }
  
- 
+ public static LinkedList<pointLocation> buildPath(pointLocation endPoint){
+   if(endPoint.parent == null){
+    return new LinkedList<pointLocation>(Arrays.asList(endPoint));
+   }
+   return buildPath(endPoint.parent).add(endPoint);
+ }
       
 }
