@@ -1,4 +1,43 @@
 
+class pointLocation {
+ 
+  int x,y;
+  pointLocation parent;
+  
+  public pointLocation(){
+    x = -1;
+    y = -1;
+    parent = null;
+  }
+  
+  public pointLocation(int x, int y){
+    this.x = x;
+    this.y = y;
+  }
+  
+  public void setParent(pointLocation par){
+    this.parent = par;
+  }
+  
+  public boolean equals(Object T){
+   
+    if(T instanceof pointLocation){
+      pointLocation a = (pointLocation)T;
+      return a.x == this.x && a.y == this.y;
+    }
+    
+    return false;
+    
+  }
+  
+  public int hashCode(){
+    
+    return this.x + this.y;
+    
+  }
+  
+}
+
 public class graphPathFinding {
 
   static int[] retracePath;
