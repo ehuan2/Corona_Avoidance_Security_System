@@ -34,8 +34,8 @@ UserInterface () {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			x = e.getX();
-			y = e.getY();
+			x = Math.round(e.getX()/25)*25; 
+			y = Math.round(e.getY()/25)*25; 
 			
 			System.out.println("(" + x + ", " + y + ")" );
 

@@ -1,0 +1,13 @@
+Day 1 (03/04/20)
+- Started by brainstorming the problems surrounding coronavirus to figure out what we can develop in order to solve these problems ("The design process" as stated by Eric)
+- Ideas to solve the problems included:
+    - An arduino that attaches to your head, tracking your temperature to let you know if you had a fever (essentially a really expensive, inconvenient thermometer)
+    - An application that keeps the user informed on the Coronavirus with information such as what it is, how far it has spread, safety measures to take etc. (MUCH more logical than the rest but kinda generic)
+    - An application that alerts the user if someone in their area is infected and then plays soothing music to calm them (???)
+    - An application that allows you to report if someone has sneezed or coughed in your area and gives you or others ways to avoid these "contaminated areas" (this is the idea we went with)
+- After coming up with our idea the project was seperated into a few parts
+    - Eric worked on the graph theory component
+    - Jerry and Aidan worked on GUI/Button functionality component
+    
+Day 2 (03/05/20)
+- 
