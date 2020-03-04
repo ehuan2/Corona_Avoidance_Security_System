@@ -63,8 +63,8 @@ public class graphPathFinding {
       int yNext = qY.poll();
       
       if(xNext == xDest && yNext == yDest){
-         
-        return;
+         pointEnd = new Point(xNext, yNext);
+         return buildPath(pointEnd);
       }
       
       
@@ -97,4 +97,6 @@ public class graphPathFinding {
   
  }
  
+ 
+      
 }
