@@ -14,3 +14,17 @@ Day 2 (03/05/20)
     - Finished the BFS application and made it work
     - Added in some test cases
     - Difficult part : Figuring out JUnit Tests Dependicies and working with Maven in Intellij
+- Aidan
+    - Finished location, destination, report buttons
+    - Had some trouble at first but was able to add mouse listeners to the program and use it to find the x y coordinates of a mouse click
+- Jerry
+    - 
+
+
+
+
+
+
+
+
+
