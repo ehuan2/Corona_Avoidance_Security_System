@@ -10,4 +10,7 @@ Day 1 (03/04/20)
     - Jerry and Aidan worked on GUI/Button functionality component
     
 Day 2 (03/05/20)
-- 
+- Eric 
+    - Finished the BFS application and made it work
+    - Added in some test cases
+    - Difficult part : Figuring out JUnit Tests Dependicies and working with Maven in Intellij
