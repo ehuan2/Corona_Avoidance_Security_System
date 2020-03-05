@@ -78,10 +78,10 @@ public class graphPathFinding {
             }
 
 
-            int[] xVector = new int[]{25, -25, 0, 0};
-            int[] yVector = new int[]{0, 0, 25, -25};
+            int[] xVector = new int[]{25, -25, 0, 0, 25, 25, -25, -25};
+            int[] yVector = new int[]{0, 0, 25, -25, 25, -25, 25, -25};
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 8; i++) {
                 int xNew = xNext + xVector[i];
                 int yNew = yNext + yVector[i];
 
