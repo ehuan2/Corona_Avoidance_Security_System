@@ -106,7 +106,7 @@ public class graphPathFinding {
  
  public static boolean withinRadius(int xLocale, int yLocale, int xRadius, int yRadius, int radius){ // returns true if in radius
   
-  return Math.pow((xLocale-xRadius), 2) + Math.pow((yLocale - yRadius), 2) <= Math.pow(radius, 2);
+  return Math.pow((xLocale-xRadius), 2) + Math.pow((yLocale - yRadius), 2) <= Math.pow(radius/2, 2);
   
  }
 
