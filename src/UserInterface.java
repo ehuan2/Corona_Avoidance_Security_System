@@ -1,7 +1,10 @@
+package hackathon;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.*;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 import javax.swing.*;
 
@@ -11,7 +14,7 @@ public class UserInterface extends JPanel {
 	static JFrame frame = new JFrame("Prototype");
 	static JPanel panel = new JPanel();
 	static int circles[][] = new int[3][1];
-	private static pointLocation[] points = new pointLocation[0];
+	private static LinkedList<pointLocation> points = new LinkedList<pointLocation>();
 	static UserInterface cass = new UserInterface();
 	
 	static int x;
@@ -32,7 +35,7 @@ public static void main(String args[]){
 	
 public static void setGui(){
 	
-	frame.setLocation(0, 0);				//Size, Location and Resizable status.
+	frame.setLocation(400, 0);				//Size, Location and Resizable status.
 	frame.setResizable(false);
 	cass.setSize(750, 900);
 	frame.setSize(cass.getSize());
@@ -45,7 +48,11 @@ public static void setGui(){
 
 		@Override
 		public void actionPerformed(ActionEvent a) {
-//			points = GraphPathFinding.findPath(xloca, yloca, xdestin, ydestin, circles[0], circles[1], circles[2]);
+			points = GraphPathFinding.findPath(xloca, yloca, xdestin, ydestin, circles[0], circles[1], circles[2]);
+
+			if (points == null) JOptionPane.showMessageDialog(frame, "No path found, you died lmao!");
+			cass.revalidate();
+			cass.repaint();
 		}
 		
 	});
@@ -89,12 +96,12 @@ public static void setGui(){
 		
 		@Override
 		public void actionPerformed(ActionEvent a){
-			int radius = 0;									//Zone creation code.
+			int radius = 0;								//Zone creation code.
 			for (;;){
 				try {
-					radius = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter the radius (integer value > 0)"));
+					radius = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter the radius (integer value > 0)"));
 				} catch (Exception e){
-					JOptionPane.showMessageDialog(null, "Not a valid integer (greater than 0)");
+					JOptionPane.showMessageDialog(frame, "Not a valid integer (greater than 0)");
 				}
 				if (radius > 0) break;
 			}
@@ -181,37 +188,36 @@ public void paintComponent(Graphics g){
 	this.setBackground(Color.WHITE);
 	
 	
-	
 	g.drawLine(0, 750, 750, 750);
 	
 
 	g.setColor(Color.BLUE);
 	g.fillOval(x - 5, y - 5, 10, 10);
 	
-	g.setColor(Color.RED);
+	
+	g.setColor(Color.RED);	
+	for (int j = 0; j < index; j++){
+		g.fillOval(circles[0][j] - circles[2][j]/2, circles[1][j] - circles[2][j]/2, circles[2][j], circles[2][j]);
+	}
+	
+
+	if (points != null){
+		
+		g.setColor(Color.BLACK);
+		
+		for (int i = 0; i < points.size()-1; i++){
+			g.drawLine(points.get(i).x, points.get(i).y, points.get(i+1).x, points.get(i+1).y);
+		}
+	}
+	
+
+	g.setColor(Color.PINK);
 	g.fillOval(xloca - 5, yloca - 5, 10, 10);
 	
 	g.setColor(Color.GREEN);
 	g.fillOval(xdestin - 5, ydestin - 5, 10, 10);
 	
-	g.setColor(Color.BLACK);
-	try {
-		for (int j = 0; j < circles.length; j++){
-			g.drawOval(circles[0][j] - circles[2][j]/2, circles[1][j] - circles[2][j]/2, circles[2][j], circles[2][j]);
-		}
-		
-		for (int i = 0; i < points.length - 1; i++){
-			g.drawLine(points[i].x, points[i].y, points[i+1].x, points[i+1].y);
-		}
 	
-	} catch (NullPointerException e){
-		System.err.println("No points given.");		//Necessary?
-
-	} catch (Exception e){					//This definitely is.
-		
-	}
-
-
 }
 
 }
