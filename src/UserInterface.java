@@ -146,8 +146,6 @@ public static void setGui(){
 			x = m.getX() > 750 ? 750 : Math.round(m.getX()/25f) * 25;
 			y = m.getY() > 750 ? 750 : Math.round(m.getY()/25f) * 25;
 			
-			System.out.println("(" + x + ", " + y + ")");
-			
 			cass.revalidate();
 			cass.repaint();
 		}
