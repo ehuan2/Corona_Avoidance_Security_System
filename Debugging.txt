@@ -1,0 +1,3 @@
+Eric :
+  - Debugged the BFS by using JUnit test cases
+  - Tested separate methods

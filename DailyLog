@@ -10,4 +10,29 @@ Day 1 (03/04/20)
     - Jerry and Aidan worked on GUI/Button functionality component
     
 Day 2 (03/05/20)
-- 
+- Eric 
+    - Finished the BFS application and made it work
+    - Added in some test cases
+    - Difficult part : Figuring out JUnit Tests Dependicies and working with Maven in Intellij
+- Aidan
+    - Finished location, destination, report buttons
+    - Had some trouble at first but was able to add mouse listeners to the program and use it to find the x y coordinates of a mouse click
+- Jerry
+    - Added GUI functionality
+    - Compiled GUI items/code into one
+
+
+Day 3 (03/05/20)
+- Eric
+    - Helped add the BFS into the final product
+    - 
+- Jerry
+    - Helped connect the BFS to GUI
+    - Fleshed out errors involving BFS to GUI transition
+
+
+
+
+
+
+
